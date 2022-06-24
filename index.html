@@ -8,7 +8,7 @@
     <meta name="description" content="Portfolio do Rahyan Ramos de Oliveira">
     <meta name="keywords" content="portfolio, rahyan, ramos, programador, devops, backend">
 
-    <link rel="stylesheet" type="text/css" href="estilos.css">
+    <link rel="stylesheet" type="text/css" href="CSS/estilos.css">
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
 
@@ -16,6 +16,11 @@
 
     <title>Rahyan Ramos</title>
 </head>
+
+<script src="JS/validacao.js"></script>
+<script src="JS/mensagem.js"></script>
+<script src="JS/trocarImagem.js"></script>
+
 <body>
     <div class="cabecalho">
         <div class="nome">
@@ -39,23 +44,50 @@
 
     <h2 id="sobre-mim">Sobre mim</h2>
     <div class="sobre-mim">
-        <img src="minha-foto.jpg" id="eu">
-        <p>Olá! Sou Rahyan Ramos, tenho 17 anos, moro em Ji-Paraná (RO), faço o ensino médio no Instituto Federal de Rondônia integrado ao técnico em Informática, onde conheci a programação e me tornei um programador Backend.</p>
+        <img src="IMG/minha-foto.jpg" alt="Foto do Rahyan Ramos" id="eu">
+        <p>Olá! Sou Rahyan Ramos de Oliveira, tenho 17 anos, moro em Ji-Paraná (RO), atualmente estou no terceiro ano do ensino médio integrado ao técnico em Informática, no Instituto Federal de Rondônia, onde conheci a programação e me tornei um programador Back-end.</p>
     </div>
 
+    <h2 id="experiencias">Experiências profissionais</h2>
     <div class="experiencias">
-        <h2 id="experiencias">Experiências profissionais</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem iure voluptatem ex, quia iusto tenetur facilis asperiores! Nulla doloribus, maiores exercitationem iste ea provident quam blanditiis praesentium aliquid incidunt voluptatem.</p>
+        <h3>Validação de informações</h3>
+        <p>No meu segundo ano do ensino médio, realizei uma atividade na matéria de Programação Orientada a Objetos, onde desenvolvi um código em C# para consultar se as informações fornecidas por um usuário eram validas ou não. As informações verificadas foram, CPF, CNPJ, e contas bancárias.</p>
+
+        <h3>Aplicativo para locadora de veículos</h3>
+        <p>No meu segundo ano do ensino médio, desenvolvi um aplicativo na matéria de Linguagem de Programação para uma locadora de veículos, utilizando C# e SQL, o aplicativo era capaz de inserir, atualizar, deletar e visualizar as informações do banco de dados, além de fazer os cálculos do valor do aluguel do veículo de acordo com o tempo que o cliente ficaria com o veículo.</p>
+
+        <h3>Projeto de Informatização Escolar</h3>
+        <div class="proinfe">
+            <img src="IMG/proinfe.jpg" alt="Imagem do Projeto de Informatização Escolar">
+            <p>Atualmente sou bolsista no PROINFE - Projeto de Informatização escolar, estou na equipe de Front-end onde estou desenvolvendo pela primeira vez em REACT. O projeto é uma parceria do governo de Rondônia junto com o IFRO com o objetivo de conectar diversas escolas do estado através da tecnologia.<a href="https://portal.ifro.edu.br/ji-parana/noticias/12175-ifro-lanca-projeto-de-informatizacao-escolar-em-parceria-com-senador-confucio-moura" target="_blank">Saiba mais sobre o projeto aqui!</a></p>
+        </div>
     </div>
 
+    <h2 id="hobbies">Meus hobbies</h2>
     <div class="hobbies">
-        <h2 id="hobbies">Meus hobbies</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quis eligendi ea libero eos natus doloremque, fugit dolorem aspernatur enim cumque? Voluptate atque neque dignissimos laboriosam minus similique necessitatibus accusantium omnis?</p>
+        <h3>Aprender programação</h3>
+        <p>Sem dúvidas, desde que entrei para a área de tecnologia, uma das coisas que me apaixonei e amo passar o tempo fazendo é aprender novas coisas da programação. Tanto que na última férias de verão, passei ela fazendo um curso do básico ao avançado de Git. E nessas férias não pretendo fazer diferente, e já até comprei um curso para me aprofundar mais em REACT e poder ter um melhor desempenho no projeto que participo.</p>
+
+        <h3>Jogar futebol/futsal</h3>
+        <p>Desde que me entendo por gente sempre gostei muito de jogar bola, e sempre estive competindo, já participei de diversos campeonatos de futsal municipais e até mesmo um estadual.</p>
+        <div class="joer">
+            <img src="IMG/time-ifro.jpg" alt="Imagem do time de futsal do IFRO Campus Ji-Paraná que disputou o JEMS" onmouseover="mostraVideo(this);" onmouseout="mostraFoto(this);">
+            <p>O último título que eu disputei foi os Jogos Escolares Municipais de Ji-Paraná, defendendo o IFRO, e nesse torneio ficamos em terceiro lugar e conquistamos a medalha de bronze para o instituto.</p>
+        </div>
+        <p id="dica">Passe o mouse por cima da imagem e veja a defesa de penalti que fiz, garantindo o time nas semifinais.</p>
     </div>
 
+    <h2 id="contato">Entre em contato</h2>
     <div class="contato">
-        <h2 id="contato">Entre em contato</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim velit harum, provident explicabo iste, in debitis ut quisquam odio qui placeat neque, nobis quibusdam officiis eveniet officia voluptatum. Quae, qui.</p>
+        <form name="f1">
+            <p>Informe seu e-mail:</p><br>
+            <input type="text" name="email" onblur="validacaoEmail(f1.email)"  maxlength="60" size='65'>
+            <div id="msgemail"></div>
+
+            <p>Deixe uma mensagem:</p><br>
+            <input type="text" name="mensagem" size='65'><br>
+            <input type="submit" name="click" onclick="enviar(f1.click)">
+        </form>
     </div>
 </body>
 </html>
